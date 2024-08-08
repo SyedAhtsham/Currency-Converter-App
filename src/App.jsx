@@ -134,7 +134,10 @@ function App() {
         </div>
       </div>
 
-      <div className="w-full max-w-screen-xl mx-auto p-6 mt-20">
+      <section className=' pb-10'>
+      <div className="w-full max-w-screen-xl mx-auto p-6 mt-10 ">
+        <h2 className="text-3xl font-bold text-center text-slate-900 my-8">Our Trusted Partners</h2>
+
         <div className="flex flex-wrap w-full justify-center items-center gap-20">
           {/* Partner Logos */}
           <img src="../public/images/img6.png" alt="Partner 3" className="h-16 md:h-20 rounded-full" />
@@ -146,11 +149,57 @@ function App() {
 
           {/* Add more logos as needed */}
         </div>
-        <h2 className="text-3xl font-bold text-center text-slate-900 mt-8">Our Trusted Partners</h2>
 
      
       </div>
 
+      </section>
+
+      <footer className="bg-slate-900 text-white py-8">
+        <div className="max-container  mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+
+          {/* Logo and Description */}
+          <div className="mb-6 md:mb-0">
+            <div className="flex items-center font-semibold text-xl mb-3">
+
+              <a href="#" className=''><FontAwesomeIcon icon={faExchangeAlt} className="mr-2 " />Simple Convert</a>
+            </div>
+
+            <p className="mt-2 text-sm text-slate-400">
+              Building modern, responsive web applications to power your digital presence.
+            </p>
+          </div>
+
+          {/* Navigation Links */}
+          <div className="mb-6 md:mb-0 flex space-x-6">
+            <a href="#" className="text-slate-400 hover:text-white text-sm">Home</a>
+            <a href="#" className="text-slate-400 hover:text-white text-sm">About</a>
+            <a href="#" className="text-slate-400 hover:text-white text-sm">Services</a>
+            <a href="#" className="text-slate-400 hover:text-white text-sm">Contact</a>
+          </div>
+
+          {/* Social Media Icons */}
+          <div className="flex space-x-4">
+            <a href="#" className="text-slate-400 hover:text-white">
+              {/* Replace with actual icons */}
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18 2h4v4M2 20h4v4M12 8v12M16 12v8M8 16v4" />
+              </svg>
+            </a>
+            <a href="#" className="text-slate-400 hover:text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18 2h4v4M2 20h4v4M12 8v12M16 12v8M8 16v4" />
+              </svg>
+            </a>
+            <a href="#" className="text-slate-400 hover:text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18 2h4v4M2 20h4v4M12 8v12M16 12v8M8 16v4" />
+              </svg>
+            </a>
+          </div>
+
+        </div>
+      </footer>
 
 
     </>
