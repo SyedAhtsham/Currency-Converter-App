@@ -14,7 +14,7 @@ function App() {
     <>
       <Navbar />
 
-      <div className="max-container mx-auto p-6 md:mt-20 mt-10 bg-white text-gray-900">
+      <div className="max-container mx-auto p-6 md:mt-20 mt-5 bg-white text-gray-900">
         <div className='flex flex-col md:flex-row gap-5 items-center justify-between'>
           {/* Left Section: Text and Button */}
           <div className='md:w-1/2'>
