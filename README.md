@@ -15,12 +15,12 @@ The Currency Converter App is a web application designed to convert currencies i
 
 *Mobile View*
 
-<img src="src/assets/screenshots/sc2.png" alt="Currency Converter App Screenshot" width="600"/>
+<img src="src/assets/screenshots/sc2.png" alt="Currency Converter App Screenshot" width="650"/>
 
 
 *Desktop View*
 
-<img src="src/assets/screenshots/sc1.png" alt="Currency Converter App Screenshot" width="600"/>
+<img src="src/assets/screenshots/sc1.png" alt="Currency Converter App Screenshot" width="650"/>
 
 
 
