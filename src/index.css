@@ -67,3 +67,7 @@
 
 
 /* Add more dark mode styles as needed */
+input {
+  font-size: 16px;
+  /* Set a larger font size to prevent zooming */
+}
