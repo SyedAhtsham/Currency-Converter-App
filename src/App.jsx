@@ -81,7 +81,7 @@ function App() {
           {/* Left Section: Text and Button */}
           <div className='md:w-1/2'>
             <h3 className='text-sm font-medium tracking-tight text-gray-800'>Welcome to</h3>
-            <h1 className='text-4xl font-bold tracking-tight text-slate-900 mt-2'>The Best Currency Converter</h1>
+            <h1 className='text-4xl font-bold tracking-tight text-slate-900 mt-2'>The Best <span className='gradient-text'>Currency Converter</span></h1>
             <p className='mt-4 text-lg text-slate-600'>
               Convert currencies quickly and easily with our accurate and reliable currency converter. Get the latest rates for all major currencies worldwide.
             </p>
@@ -93,7 +93,9 @@ function App() {
           {/* Right Section: Currency Converter */}
           <div className='w-full md:w-96 mt-8 md:mt-0 '>
             <div className='rounded-lg bg-white px-6 py-8 shadow-xl ring-1 ring-slate-900/5 w-full'>
+              
                 <CurrencyConverter />
+              
             </div>
           </div>
 
@@ -102,16 +104,16 @@ function App() {
 
       <section className=' pb-10'>
       <div className="w-full max-w-screen-xl mx-auto p-6 mt-10 ">
-        <h2 className="text-3xl font-bold text-center text-slate-900 my-8">Our Trusted Partners</h2>
+          <h2 className="text-3xl font-bold text-center text-slate-900 my-8">Send Money to Your <span className='gradient-text font-montserrat font-bold '>Loved Ones! </span><br/> Via our Trusted Partners</h2>
 
         <div className="flex flex-wrap w-full justify-center items-center gap-20">
           {/* Partner Logos */}
           
-          <img src={img4} alt="Partner 2" className="h-16 md:h-20" />
-          <img src={img8} alt="Partner 5" className="h-16 md:h-20" />
-            <img src={img6} alt="Partner 3" className="h-16 md:h-20 rounded-full" />
-            <img src={img7} alt="Partner 4" className="h-16 md:h-20" />
-            <img src={img11} alt="Partner 4" className="h-16 md:h-20" />
+            <a href='https://www.revolut.com/en-US/money-transfer/' target='blank'><img src={img4} alt="Partner 2" className="h-16 md:h-20" /></a>
+            <a href='https://www.bankofamerica.com/' target='blank'><img src={img8} alt="Partner 5" className="h-16 md:h-20" /></a>
+            <a href='https://www.sparkasse.de/' target='blank'><img src={img6} alt="Partner 3" className="h-16 md:h-20 rounded-full" /></a>
+            <a href='https://wise.com/us/' target='blank'><img src={img7} alt="Partner 4" className="h-16 md:h-20" /></a>
+            <a href='https://www.paypal.com/us/digital-wallet/send-receive-money/send-money' target='blank'> <img src={img11} alt="Partner 4" className="h-16 md:h-20" /></a>
 
 
 
