@@ -72,6 +72,7 @@ function CurrencyConverter({ focusInput }) {
     }, [focusInput]);
 
     return (
+        <section id="converter">
         <div className="currency-converter">
             <h2 className="text-3xl font-medium tracking-tight text-slate-900">Currency Converter</h2>
 
@@ -114,7 +115,8 @@ function CurrencyConverter({ focusInput }) {
                     Conversion Rate:  1 {fromCurrency.split(' ')[0]} = {currentRate.toFixed(2)} {toCurrency.split(' ')[0]}
                 </div>
             )}
-        </div>
+            </div>
+        </section>
     );
 }
 
