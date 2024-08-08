@@ -79,15 +79,17 @@ function CurrencyConverter({ focusInput }) {
             {/* Amount Field */}
             <div className="mt-4">
                 <p className="text-md text-slate-500">Amount</p>
-                <input
-                    ref={amountInputRef}
-                    className="mt-1 w-full px-3 py-2 border border-slate-300 rounded-md text-sm shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="130"
-                    type="number"
-                    value={amount}
-                    onChange={handleAmountChange}
-                    required
-                />
+                    <input
+                        ref={amountInputRef}
+                        className="mt-1 w-full px-3 py-2 border border-slate-300 rounded-md text-sm shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="130"
+                        type="number"
+                        inputMode="numeric"  // Helps ensure numeric keyboard is shown
+                        value={amount}
+                        onChange={handleAmountChange}
+                        required
+                    />
+
             </div>
 
             {/* From Field */}
