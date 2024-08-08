@@ -1,6 +1,17 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
+import SearchableDropdown from './components/SearchableDropdown';
+
+import img8 from './assets/images/img8.jpg';
+import img4 from './assets/images/img4.png';
+import img6 from './assets/images/img6.png';
+import img7 from './assets/images/img7.png';
+import img11 from './assets/images/img11.webp';
+import CurrencyConverter from './components/CurrencyConverter';
+
+
+
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -82,52 +93,7 @@ function App() {
           {/* Right Section: Currency Converter */}
           <div className='w-full md:w-96 mt-8 md:mt-0 '>
             <div className='rounded-lg bg-white px-6 py-8 shadow-xl ring-1 ring-slate-900/5 w-full'>
-              <div className='flex items-center flex-col'>
-                <h2 className='text-3xl font-medium tracking-tight text-slate-900'>Currency Converter</h2>
-              </div>
-
-              {/* Amount Field */}
-              <div className='mt-4'>
-                <p className='text-md text-slate-500'>Amount</p>
-                <input
-                  className='mt-1 w-full px-3 py-2 border border-slate-300 rounded-md text-sm shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500'
-                  placeholder='130'
-                  type='number'
-                />
-              </div>
-
-              {/* From Field */}
-              <div className='mt-4'>
-                <p className='text-md text-slate-500'>From</p>
-                <select
-                  className='mt-1 w-full px-3 py-2 border border-slate-300 rounded-md text-sm shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500'
-                >
-                  <option value="USD">United States Dollar (USD)</option>
-                  <option value="EUR">Euro (EUR)</option>
-                  <option value="GBP">British Pound (GBP)</option>
-                  {/* <!-- Add more options as needed --> */}
-                </select>
-              </div>
-
-              {/* To Field */}
-              <div className='mt-4'>
-                <p className='text-md text-slate-500'>To</p>
-                <select
-                  className='mt-1 w-full px-3 py-2 border border-slate-300 rounded-md text-sm shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500'
-                >
-                  <option value="USD">United States Dollar (USD)</option>
-                  <option value="EUR">Euro (EUR)</option>
-                  <option value="GBP">British Pound (GBP)</option>
-                  {/* <!-- Add more options as needed --> */}
-                </select>
-              </div>
-
-              {/* Convert Button */}
-              <button
-                className='mt-6 bg-black text-white px-4 py-2 text-sm font-medium rounded-md w-full'
-              >
-                Convert
-              </button>
+                <CurrencyConverter />
             </div>
           </div>
 
@@ -140,10 +106,12 @@ function App() {
 
         <div className="flex flex-wrap w-full justify-center items-center gap-20">
           {/* Partner Logos */}
-          <img src="../public/images/img6.png" alt="Partner 3" className="h-16 md:h-20 rounded-full" />
-          <img src="../public/images/img4.png" alt="Partner 2" className="h-16 md:h-20" />
-          <img src="../public/images/img8.jpg" alt="Partner 5" className="h-16 md:h-20" />
-          <img src="../public/images/img7.png" alt="Partner 4" className="h-16 md:h-20" />
+          
+          <img src={img4} alt="Partner 2" className="h-16 md:h-20" />
+          <img src={img8} alt="Partner 5" className="h-16 md:h-20" />
+            <img src={img6} alt="Partner 3" className="h-16 md:h-20 rounded-full" />
+            <img src={img7} alt="Partner 4" className="h-16 md:h-20" />
+            <img src={img11} alt="Partner 4" className="h-16 md:h-20" />
 
 
 
