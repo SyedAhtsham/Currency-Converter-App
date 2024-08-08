@@ -13,8 +13,14 @@ The Currency Converter App is a web application designed to convert currencies i
 
 ## Screenshots
 
-![Currency Converter App Screenshot](./assets/screenshots/sc1.png)
-![Currency Converter App Screenshot](./assets/screenshots/sc2.png)
+*Mobile View*
+
+![Currency Converter App Screenshot](src/assets/screenshots/sc2.png)
+
+*Desktop View*
+
+![Currency Converter App Screenshot](src/assets/screenshots/sc1.png)
+
 
 ## Installation
 
