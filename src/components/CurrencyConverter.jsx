@@ -62,8 +62,9 @@ function CurrencyConverter({ onAmountFocus, onAmountBlur }) {
 
     return (
         <div className="currency-converter">
-            <h2 className="text-3xl font-medium tracking-tight text-slate-900">Currency Converter</h2>
-
+            <div className='flex flex-col items-center'>
+            <h2 className="text-3xl font-medium tracking-tight  text-slate-900">Currency Converter</h2>
+            </div>
             <div className="mt-4">
                 <p className="text-md text-slate-500">Amount</p>
                 <input
