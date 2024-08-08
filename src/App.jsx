@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useState, useRef, useEffect } from 'react';
 
 import img8 from './assets/images/img8.jpg';
 import img4 from './assets/images/img4.png';
@@ -10,6 +11,27 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 function App() {
+
+  const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
+  const converterRef = useRef(null);
+
+  const handleFocus = () => {
+    setIsKeyboardVisible(true);
+  };
+
+  const handleBlur = () => {
+    setIsKeyboardVisible(false);
+  };
+
+  useEffect(() => {
+    if (isKeyboardVisible && converterRef.current) {
+      // Move the converter component up by adjusting margin or padding
+      converterRef.current.style.marginBottom = '50px'; // Adjust as needed
+    } else if (converterRef.current) {
+      converterRef.current.style.marginBottom = '0';
+    }
+  }, [isKeyboardVisible]);
+
   return (
     <>
       <Navbar />
@@ -33,7 +55,8 @@ function App() {
           {/* Right Section: Currency Converter */}
           <div className='w-full md:w-96 mt-8 md:mt-0'>
             <div className='rounded-lg bg-white px-6 py-8 shadow-xl ring-1 ring-slate-900/5 w-full'>
-              <CurrencyConverter />
+              <CurrencyConverter onAmountFocus={handleFocus} onAmountBlur={handleBlur} />
+
             </div>
           </div>
         </div>
@@ -42,7 +65,7 @@ function App() {
       <section className='pb-10'>
         <div className="w-full max-w-screen-xl mx-auto p-6 mt-10">
 
-            <h2 className="text-3xl font-bold text-center my-8 max-w-[30ch] mx-auto">
+            <h2 className="text-3xl font-bold text-center my-8 max-w-[30ch] leading-snug mx-auto">
               Send Money to Your Loved Ones! Via our Trusted Partners
             </h2>
 

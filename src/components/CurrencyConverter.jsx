@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import SearchableDropdown from './SearchableDropdown';
 
-function CurrencyConverter({ focusInput }) {
+function CurrencyConverter({ onAmountFocus, onAmountBlur }) {
     const [amount, setAmount] = useState('');
     const [fromCurrency, setFromCurrency] = useState('USD - United States Dollar');
     const [toCurrency, setToCurrency] = useState('PKR - Pakistani Rupee');
@@ -10,7 +10,6 @@ function CurrencyConverter({ focusInput }) {
     const [currentRate, setCurrentRate] = useState(null);
     const amountInputRef = useRef(null);
 
-    // Function to handle amount input change
     const handleAmountChange = (e) => {
         const value = e.target.value;
         if (value === '' || (Number(value) > 0 && !value.includes('-'))) {
@@ -18,9 +17,7 @@ function CurrencyConverter({ focusInput }) {
         }
     };
 
-    // Fetch conversion rate and update conversion result
     useEffect(() => {
-        // Only trigger conversion if amount and currencies are valid
         if (amount && fromCurrency && toCurrency) {
             const convert = async () => {
                 try {
@@ -42,9 +39,8 @@ function CurrencyConverter({ focusInput }) {
             setConversionResult('');
             setCurrentRate(null);
         }
-    }, [amount, fromCurrency, toCurrency]); // Dependencies array
+    }, [amount, fromCurrency, toCurrency]);
 
-    // Fetch conversion rate from API
     const getConversionRate = async (from, to) => {
         const apiKey = '65e1523e814589f673fe4a70'; // Your API key
         const url = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/${from}`;
@@ -64,48 +60,35 @@ function CurrencyConverter({ focusInput }) {
         }
     };
 
-    // Focus the amount input when `focusInput` changes
-    useEffect(() => {
-        if (focusInput && amountInputRef.current) {
-            amountInputRef.current.focus();
-        }
-    }, [focusInput]);
-
     return (
-        <section id="converter">
         <div className="currency-converter">
             <h2 className="text-3xl font-medium tracking-tight text-slate-900">Currency Converter</h2>
 
-            {/* Amount Field */}
             <div className="mt-4">
                 <p className="text-md text-slate-500">Amount</p>
-                    <input
-                        ref={amountInputRef}
-                        className="mt-1 w-full px-3 py-2 border border-slate-300 rounded-md text-sm shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
-                        placeholder="130"
-                        type="number"
-                        inputMode="numeric"  // Helps ensure numeric keyboard is shown
-                        value={amount}
-                        onChange={handleAmountChange}
-                        required
-                    />
-
+                <input
+                    ref={amountInputRef}
+                    className="mt-1 w-full px-3 py-2 border border-slate-300 rounded-md text-sm shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="130"
+                    type="number"
+                    value={amount}
+                    onChange={handleAmountChange}
+                    onFocus={onAmountFocus}
+                    onBlur={onAmountBlur}
+                    required
+                />
             </div>
 
-            {/* From Field */}
             <div className="mt-4">
                 <p className="text-md text-slate-500">From</p>
                 <SearchableDropdown selected={fromCurrency} onSelect={setFromCurrency} />
             </div>
 
-            {/* To Field */}
             <div className="mt-4">
                 <p className="text-md text-slate-500">To</p>
                 <SearchableDropdown selected={toCurrency} onSelect={setToCurrency} />
             </div>
 
-            {/* Conversion Result */}
- 
             {conversionResult && (
                 <div className="mt-6 text-xl font-semibold flex flex-col items-center text-slate-900">
                     {conversionResult}
@@ -114,11 +97,10 @@ function CurrencyConverter({ focusInput }) {
 
             {currentRate && (
                 <div className="mt-4 text-sm flex flex-col items-center text-slate-600">
-                    Conversion Rate:  1 {fromCurrency.split(' ')[0]} = {currentRate.toFixed(2)} {toCurrency.split(' ')[0]}
+                    Conversion Rate: 1 {fromCurrency.split(' ')[0]} = {currentRate.toFixed(2)} {toCurrency.split(' ')[0]}
                 </div>
             )}
-            </div>
-        </section>
+        </div>
     );
 }
 
