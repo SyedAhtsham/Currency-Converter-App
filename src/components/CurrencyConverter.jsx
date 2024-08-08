@@ -72,6 +72,7 @@ function CurrencyConverter({ onAmountFocus, onAmountBlur }) {
                     placeholder="130"
                     type="number"
                     value={amount}
+                    inputMode="numeric"  // Helps ensure numeric keyboard is shown
                     onChange={handleAmountChange}
                     onFocus={onAmountFocus}
                     onBlur={onAmountBlur}
